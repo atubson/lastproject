@@ -2,17 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 5000;
+const fetch = require('node-fetch');
+const api_key = "896b160ed1c39f3b9471c1b72df80de9";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Getting movie premieres from API
+fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&region=pl`)
+.then(response => response.json())
+.then(json => console.log(json));
 
 app.get('/api/hello', (req, res) => {
     res.send({ express: 'Hello From Express' });
 });
-app.post('/api/world', (req, res) => {
-    console.log(req.body);
-    res.send(
-        `I received your POST request. This is what you sent me: ${req.body.post}`,
-    );
-});
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
