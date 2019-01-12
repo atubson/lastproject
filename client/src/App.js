@@ -42,7 +42,11 @@ class App extends Component {
           </a>
         </header>
         <p>{this.state.response}</p>
+        <button className="red btn waves-effect waves-light" type="submit" name="action">Submit
+    <i className="material-icons right">send</i>
+  </button>
       </div>
+      
     );
   }
 }
