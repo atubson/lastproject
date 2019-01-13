@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 const api_key = "896b160ed1c39f3b9471c1b72df80de9";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.static('public'));
 // Getting movie premieres from API
 fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1&region=pl`)
 .then(response => response.json())
