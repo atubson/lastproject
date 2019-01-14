@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RegisterPage from './components/RegisterPage';
+import Login from './components/Login';
 
 class App extends Component {
   state = {
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div className="App">
       <RegisterPage />
+      <Login />
         <p>{this.state.response}</p>
       </div>
       
