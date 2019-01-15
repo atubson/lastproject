@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import RegisterPage from './components/RegisterPage';
 import Login from './components/Login';
+import Home from './components/Home';
 
 class App extends Component {
   state = {
@@ -28,6 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <Home/>
       <RegisterPage />
       <Login />
         <p>{this.state.response}</p>
