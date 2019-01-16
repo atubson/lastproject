@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import RegisterPage from './components/RegisterPage';
 import Login from './components/Login';
+import Navbar from './components/Navbar';
+import MoviePoster from './components/MoviePoster';
+
 
 class App extends Component {
   state = {
@@ -28,9 +31,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <RegisterPage />
-      <Login />
-        <p>{this.state.response}</p>
+      {/* <RegisterPage />
+      <Login /> */}
+      <Navbar />
+      <MoviePoster />
+      <p>{this.state.response}</p>
       </div>
       
     );
