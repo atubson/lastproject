@@ -3,6 +3,9 @@ import './App.css';
 import RegisterPage from './components/RegisterPage';
 import Login from './components/Login';
 import Home from './components/Home';
+import Navbar from './components/Navbar';
+import MoviePoster from './components/MoviePoster';
+
 
 class App extends Component {
   state = {
@@ -32,6 +35,8 @@ class App extends Component {
       <Home/>
       <RegisterPage />
       <Login />
+      <Navbar />
+      <MoviePoster />
         <p>{this.state.response}</p>
       </div>
       
