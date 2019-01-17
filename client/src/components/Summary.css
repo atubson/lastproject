@@ -1,0 +1,15 @@
+
+.meta-data {
+    position: absolute;
+    margin-left: 20px;
+}
+
+.container {
+    color: #ffffff;
+}
+
+.movie-summary {
+    position: absolute;
+    margin-top: -70px;
+    width: 13%;
+}

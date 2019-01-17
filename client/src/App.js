@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import MoviePoster from './components/MoviePoster';
+import Summary from './components/Summary';
 
 
 class App extends Component {
@@ -37,6 +38,8 @@ class App extends Component {
       <Login />
       <Navbar />
       <MoviePoster />
+      <Navbar />
+      <Summary />
         <p>{this.state.response}</p>
       </div>
       
