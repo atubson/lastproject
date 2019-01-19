@@ -7,15 +7,36 @@ import Navbar from './components/Navbar';
 import MoviePoster from './components/MoviePoster';
 import Summary from './components/Summary';
 import MovieRoom from './components/MovieRoom';
+import MovieDescription from './components/MovieDescription';
+import MovieDates from './components/MovieDates';
+import MoviePosterDescription from './components/MoviePosterDescription';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.updateDat = this.updateData.bind(this)
+  }
   state = {
     response: '',
     post: '',
     responseToPost: '',
+    data: "",
+    flag: false,
+    flag2: false,
+    moreData: ""
   };
-
+ 
+  updateData = (data) => {
+    this.setState({data: data})
+    this.setState({flag: true})    
+  }
+  updateMoreData = (data) => {
+    this.setState({moreData: data})
+    this.setState({flag2: true})
+  }
+  
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({
@@ -23,15 +44,15 @@ class App extends Component {
       }))
       .catch(err => console.log(err));
   }
-
-  callApi = async () => {
+   callApi = async () => {
      const response = await fetch('/api/hello');
      const body = await response.json();
      if (response.status !== 200) throw Error(body.message);
      return body;
    };
-
+ 
   render() {
+
     return (
       
       <div className="App">
@@ -39,7 +60,17 @@ class App extends Component {
         <Login />
         <RegisterPage />
         <Navbar />
-        <MoviePoster />
+        <MoviePoster updateData = {this.updateData} updateMoreData = {this.updateMoreData} />
+        <div>
+          <Navbar />
+            <div className="MovieDetailPage valign-wrapper" >
+              <div className="row">
+                <MoviePosterDescription data = {this.state.data} />
+                <MovieDescription data = {this.state.data} flag = {this.state.flag} moreData = {this.state.moreData} />
+                <MovieDates />
+              </div>
+            </div>
+            </div>
         <Navbar /> 
         <MovieRoom />
         
@@ -52,5 +83,5 @@ class App extends Component {
     );
   }
 }
-
+ 
 export default App;
