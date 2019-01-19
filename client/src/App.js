@@ -5,14 +5,11 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import MoviePoster from './components/MoviePoster';
-<<<<<<< HEAD
 import Summary from './components/Summary';
 import MovieRoom from './components/MovieRoom';
-=======
 import MovieDescription from './components/MovieDescription';
 import MovieDates from './components/MovieDates';
 import MoviePosterDescription from './components/MoviePosterDescription';
->>>>>>> Added movie date, description
 
 
 class App extends Component {
@@ -47,15 +44,7 @@ class App extends Component {
       }))
       .catch(err => console.log(err));
   }
-<<<<<<< HEAD
-
-  callApi = async () => {
-=======
- componentWillUpdate() {
-   
- }
    callApi = async () => {
->>>>>>> Added movie date, description
      const response = await fetch('/api/hello');
      const body = await response.json();
      if (response.status !== 200) throw Error(body.message);
@@ -63,15 +52,25 @@ class App extends Component {
    };
  
   render() {
+
     return (
       
       <div className="App">
-<<<<<<< HEAD
 
         <Login />
         <RegisterPage />
         <Navbar />
-        <MoviePoster />
+        <MoviePoster updateData = {this.updateData} updateMoreData = {this.updateMoreData} />
+        <div>
+          <Navbar />
+            <div className="MovieDetailPage valign-wrapper" >
+              <div className="row">
+                <MoviePosterDescription data = {this.state.data} />
+                <MovieDescription data = {this.state.data} flag = {this.state.flag} moreData = {this.state.moreData} />
+                <MovieDates />
+              </div>
+            </div>
+            </div>
         <Navbar /> 
         <MovieRoom />
         
@@ -81,23 +80,6 @@ class App extends Component {
       
       
       
-=======
-      <Home/>
-      <RegisterPage />
-      <Login />
-      <Navbar />
-      <MoviePoster updateData = {this.updateData} updateMoreData = {this.updateMoreData} />
-      <div >
-      <Navbar />
-          <div className="row">
-            <MoviePosterDescription data = {this.state.data} />
-            <MovieDescription data = {this.state.data} flag = {this.state.flag} moreData = {this.state.moreData} />
-            <MovieDates />
-          </div>
-        </div>
-      </div>
-     
->>>>>>> Added movie date, description
     );
   }
 }

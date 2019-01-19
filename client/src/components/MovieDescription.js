@@ -47,7 +47,7 @@ class MovieDescription extends React.Component {
                     <div className="card">
                         <div className="card-title">Film description</div>
                         <div className="card-content left-align">
-                            {this.props.data.overview}
+                            Oczekiwanie na pobranie danych
                         </div>
                         <div className="card-title">More information</div>
                         <div className="card-content">
@@ -55,23 +55,23 @@ class MovieDescription extends React.Component {
                                 <tbody>
                                     <tr>
                                         <td>Director:</td>
-                                        <td>{}</td>
+                                        <td>Oczekiwanie na pobranie danych</td>
                                     </tr>
                                     <tr>
                                         <td>Cast:</td>
-                                        <td>{}</td>
+                                        <td>Oczekiwanie na pobranie danych</td>
                                     </tr>
                                     <tr>
                                         <td>Genre:</td>
-                                        <td>{}</td>
+                                        <td>Oczekiwanie na pobranie danych</td>
                                     </tr>
                                     <tr>
                                         <td>Rating:</td>
-                                        <td>{}</td>
+                                        <td>Oczekiwanie na pobranie danych</td>
                                     </tr>
                                     <tr>
                                         <td>Runtime:</td>
-                                        <td>{} min</td>
+                                        <td>Oczekiwanie na pobranie danych</td>
                                     </tr> 
                                 </tbody>
                             </table>
