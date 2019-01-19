@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.MovieDetailPage {
+  width: 100vw;
+  height: calc(100vh - 80px);
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
