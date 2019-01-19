@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import MoviePoster from './components/MoviePoster';
 import Summary from './components/Summary';
+import MovieRoom from './components/MovieRoom';
 
 
 class App extends Component {
@@ -23,7 +24,7 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-   callApi = async () => {
+  callApi = async () => {
      const response = await fetch('/api/hello');
      const body = await response.json();
      if (response.status !== 200) throw Error(body.message);
@@ -32,16 +33,21 @@ class App extends Component {
 
   render() {
     return (
+      
       <div className="App">
-      <Home/>
-      <RegisterPage />
-      <Login />
-      <Navbar />
-      <MoviePoster />
-      <Navbar />
-      <Summary />
+
+        <Login />
+        <RegisterPage />
+        <Navbar />
+        <MoviePoster />
+        <Navbar /> 
+        <MovieRoom />
+        
+        
         <p>{this.state.response}</p>
       </div>
+      
+      
       
     );
   }

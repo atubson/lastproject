@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+ 
 import './style.css';
 
 //const api_key = "332654c71ccbb479020bcc047eaa43e8";
@@ -17,7 +18,7 @@ class MoviePoster extends React.Component{
         axios.get('https://api.themoviedb.org/3/movie/upcoming?api_key=332654c71ccbb479020bcc047eaa43e8&language=en-US&page=1&region=pl')
         .then(res=>{
             this.setState({
-                images: res.data.results.slice(4,8)
+                images: res.data.results.slice(0,4)
             })
             
         })  
