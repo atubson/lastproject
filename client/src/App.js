@@ -6,6 +6,9 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import MoviePoster from './components/MoviePoster';
 import Summary from './components/Summary';
+import UserGreeting from './components/UserGreeting';
+import {BrowserRouter, Route} from 'react-router-dom'
+
 
 
 class App extends Component {
@@ -31,17 +34,25 @@ class App extends Component {
    };
 
   render() {
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
     return (
+      <BrowserRouter>
       <div className="App">
+      <UserGreeting />
       <Home/>
-      <RegisterPage />
-      <Login />
+      <Route path='/login' component={Login} />
+      <Route path='/register' component={RegisterPage} />
       <Navbar />
       <MoviePoster />
       <Navbar />
       <Summary />
         <p>{this.state.response}</p>
+        
       </div>
+      </BrowserRouter>
       
     );
   }
